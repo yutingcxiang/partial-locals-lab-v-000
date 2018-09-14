@@ -14,11 +14,11 @@ class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
   
-  def self.search(student)
+  def self.search(search_term)
     if !student
       Student.all
     else
-      where('name LIKE ?', "%#{params[:term]}%")
+      where('name LIKE ?', "%#{params[:search_term]}%")
       
     end
   end

@@ -19,7 +19,6 @@ class Student < ActiveRecord::Base
       Student.all
     else
       where('name LIKE ?', "%#{params[:search_term]}%")
-      
     end
   end
 end

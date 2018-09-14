@@ -19,6 +19,9 @@ class Student < ActiveRecord::Base
       Student.all
     else
       
+  @ = if params[:term]
+    Task.where('name LIKE ?', "%#{params[:term]}%")
+      
     end
   end
 end
